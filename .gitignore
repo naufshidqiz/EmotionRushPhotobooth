@@ -1,0 +1,19 @@
+# Python bytecode and local virtual environments
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Captured photos, GIFs, and generated output
+hasil_photo/*
+!hasil_photo/.gitkeep
+hasil_photo_legacy/
+hasil_foto/
+mau_print/
+tidak_print/
+
+# Local editor / operating system files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

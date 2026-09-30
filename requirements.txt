@@ -1,0 +1,3 @@
+fer==25.10.3
+tensorflow==2.21.0
+setuptools<82
