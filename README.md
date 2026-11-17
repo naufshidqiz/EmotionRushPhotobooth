@@ -1,6 +1,8 @@
-# EMO RUSH Photobooth
+# Emotion Rush Photobooth
 
-A Windows webcam game that detects facial expressions, scores seven challenges, and creates a photo strip plus an animated GIF. Players choose six photos for the supplied strip template. The game does not send email; approved results are saved locally in a folder named for the email entered by the player.
+A Windows webcam game that detects facial expressions, grades seven expression "courses" like an ITB transcript, and creates a photo strip plus an animated GIF. Players choose six photos for the supplied strip template. The game does not send email; approved results are saved locally in a folder named for the email entered by the player.
+
+The screens are styled as a himpunan notice board (paper strips, pins, tape and stamps on ITB Insight blue) and drawn by `ui_board.py` with the bundled Archivo and Roboto fonts.
 
 ## PC recommendations
 
@@ -65,10 +67,11 @@ The game opens fullscreen. Press **F** to switch between fullscreen and a normal
 
 ## Playing and saving
 
-1. Select **Start Game**. Use **Calibrate Camera** first if you want to check the camera, lighting, face boxes, or detected face count.
-2. Complete the seven expression challenges.
-3. Select six captured photos for the strip, review the strip and GIF, and approve or change the selection.
+1. Click **GAS MAIN** (or press Enter). Use **CEK KAMERA** first if you want to check the camera, lighting, face boxes, or detected face count.
+2. Complete the seven expression courses. Each one is graded on the ITB scale (A, AB, B, BC, C, D, E), and the session ends with a SIX-style transcript and NR.
+3. Click six photos for the strip, review the strip and GIF, and click **SIMPAN** (Y) or **GANTI FOTO** (N).
 4. Enter an email address to name the local result folder. The program does not send an email.
+5. On the last screen, click **MAIN LAGI** (R) for another round or **KE MENU** (Q).
 
 The strip and GIF are saved under:
 
@@ -89,9 +92,21 @@ For example, `hasil_photo/player@example.com/` contains the approved PNG strip a
 ## Project files
 
 ```text
-DRAFT0_EC.py                   Game
-run_game.bat                   Windows launcher
-requirements.txt               Python dependencies
+DRAFT0_EC.py                    Game logic: camera, emotion scoring, phases, saving
+ui_board.py                     Screen renderer (notice-board design)
+run_game.bat                    Windows launcher
+requirements.txt                Python dependencies
 assets/photo_strip_template.png Photo-strip artwork
-hasil_photo/                   Local results (not tracked by Git)
+assets/fonts/                   Archivo and Roboto (SIL Open Font License, see *-OFL.txt)
+tools/render_screens.py         Renders every screen to PNG without a webcam, for design review
+design/mockups/                 HTML mockups the screens were built from
+hasil_photo/                    Local results (not tracked by Git)
 ```
+
+To review the screens without a camera:
+
+```powershell
+venv\Scripts\python.exe tools\render_screens.py
+```
+
+The PNGs are written to `design/renders/`.

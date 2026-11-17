@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "name": "Persona 5 menu and battle UI (reference only)",
+    "description": "Design DNA extracted from four Persona 5 screenshots supplied by the user on 2026-11-17. Used as a craft bar for EMO RUSH, not as a look to copy. See persona5-transfer.md for what carries over.",
+    "source_references": [
+      "pause menu (Items/Equip/Persona/Stats/Bond/Request/System) over red-and-black character art",
+      "system menu over red-tinted 3D scene",
+      "battle command wheel with 1 MORE interrupt and party HP/SP HUD",
+      "negotiation dialogue with angled response options"
+    ],
+    "created_at": "2026-11-17"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic red with black and white; a spectral glitch band appears only behind the selected item",
+      "primary": { "hex": "#F12525", "role": "signal red: menu fields, selection shapes, radiating bursts" },
+      "secondary": { "hex": "#8A0C06", "role": "deep red: tinted full-screen backgrounds behind menus" },
+      "accent": { "hex": "#F12525", "role": "measured accent; same red that drives selection" },
+      "neutral": {
+        "scale": ["#FAFAFA", "#CFCFCF", "#A9A1A3", "#939292", "#545352", "#372727", "#0C0D0F", "#040303"],
+        "usage": "#FAFAFA is the foreground for all type on black and red; #040303 is the dominant ground and the outline ink around white letters; mid greys only in tinted 3D scenery"
+      },
+      "semantic": {
+        "success": "#4CC7BE",
+        "warning": "#E1F929",
+        "error": "#F12525",
+        "info": "#2CD7E0"
+      },
+      "surface": { "background": "#040303", "card": "#0C0D0F", "elevated": "#FAFAFA" },
+      "contrast_strategy": "maximum: pure black, pure white and one saturated red; no mid-tone UI surfaces",
+      "measurement": { "k": 8, "sampling": { "method": "deterministic_stratified", "max_pixels": 160000 } },
+      "measured_palette": [
+        { "hex": "#040303", "coverage": 0.4993, "role": "background", "ref": "pause menu" },
+        { "hex": "#372727", "coverage": 0.2682, "role": "unassigned", "ref": "pause menu" },
+        { "hex": "#F9F9F9", "coverage": 0.102, "role": "text", "ref": "pause menu" },
+        { "hex": "#F12525", "coverage": 0.0968, "role": "accent", "ref": "pause menu" },
+        { "hex": "#BF1FF6", "coverage": 0.0096, "role": "unassigned", "ref": "pause menu glitch band" },
+        { "hex": "#E1F929", "coverage": 0.005, "role": "unassigned", "ref": "pause menu glitch band" },
+        { "hex": "#8A0C06", "coverage": 0.4232, "role": "background", "ref": "system menu" },
+        { "hex": "#CA1411", "coverage": 0.2128, "role": "accent", "ref": "system menu" },
+        { "hex": "#0C0D0F", "coverage": 0.2796, "role": "background", "ref": "battle" },
+        { "hex": "#EF200A", "coverage": 0.0141, "role": "accent", "ref": "battle" },
+        { "hex": "#4CC7BE", "coverage": 0.0066, "role": "unassigned", "ref": "battle HP numerals" },
+        { "hex": "#030202", "coverage": 0.7526, "role": "background", "ref": "dialogue" },
+        { "hex": "#FCFBF9", "coverage": 0.1052, "role": "text", "ref": "dialogue" }
+      ]
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "280-320px at 1080p (interrupt words such as 1 MORE)", "weight": "black", "line_height": "0.85", "tracking": "tight, letters touching" },
+        "heading_1": { "size": "100-120px (selected menu item)", "weight": "black", "line_height": "0.9", "tracking": "-0.02em" },
+        "heading_2": { "size": "70-90px (unselected menu items)", "weight": "black", "line_height": "0.9", "tracking": "-0.01em" },
+        "heading_3": { "size": "44-56px (command labels, HUD numerals)", "weight": "heavy, italic for numerals", "line_height": "1", "tracking": "0" },
+        "body": { "size": "26-30px (dialogue text)", "weight": "bold", "line_height": "1.3", "tracking": "0.01em" },
+        "body_small": { "size": "20-24px (command hints under labels)", "weight": "medium", "line_height": "1.1", "tracking": "0" },
+        "caption": { "size": "18px (button-prompt legends)", "weight": "bold", "line_height": "1", "tracking": "0" },
+        "overline": { "size": "22px (enemy name banner)", "weight": "bold", "line_height": "1", "tracking": "0.3em, widely spaced" }
+      },
+      "font_families": {
+        "heading": "custom cut-out lettering: every glyph from a different face, size and baseline, white letters with heavy black keylines",
+        "body": "plain bold grotesque, upright, set inside angled boxes",
+        "mono": "none"
+      },
+      "font_style_notes": "Headlines mix uppercase and lowercase glyphs of different families in one word; scale jumps are huge (display is about 10x body); numerals are condensed italic with a dark outline"
+    },
+    "spacing": {
+      "base_unit": "none fixed; items overlap by 10-30% of their height",
+      "scale": ["overlap", "tight", "one item height"],
+      "content_density": "compact",
+      "section_rhythm": "no sections; one screen is one composition with one focal word"
+    },
+    "layout": {
+      "grid_system": "none; diagonal and radial placement",
+      "max_content_width": "full screen, edge to edge",
+      "columns": "1 menu column stepped on a 15-25 degree diagonal, character art owning the opposite third",
+      "gutter": "negative; items overlap",
+      "breakpoints": ["fixed 16:9 TV frame"],
+      "alignment_tendency": "asymmetric"
+    },
+    "shape": {
+      "border_radius": { "small": "0", "medium": "0", "large": "0", "pill": "only on controller-glyph keys" },
+      "border_usage": "bold borders: 6-10px black keylines around white letters, white keylines around black panels",
+      "divider_style": "none; angled slabs separate items"
+    },
+    "elevation": {
+      "shadow_style": "hard drop: a duplicated slab offset behind the element in red or black, zero blur",
+      "levels": { "low": "flat", "medium": "one offset duplicate slab", "high": "two stacked offset slabs plus a radiating burst" },
+      "depth_cues": "overlapping layers and color intensity"
+    },
+    "iconography": {
+      "style": "flat white glyphs with black outline; stars and controller-button keys",
+      "stroke_weight": "heavy",
+      "size_scale": ["32px", "48px", "64px"],
+      "preferred_set": "custom"
+    },
+    "motion": {
+      "easing": "fast ease-out with overshoot; hard cuts between screens",
+      "duration_scale": { "micro": "80-120ms", "normal": "200-300ms", "macro": "500-800ms" },
+      "entrance_pattern": "items slam in along their diagonal with a small rotation and settle with overshoot",
+      "exit_pattern": "hard cut or a full-screen wipe in the accent color",
+      "philosophy": "cinematic-snappy: every confirmation is a beat"
+    },
+    "components": {
+      "button_style": "text-only items; the selected one grows, flips to inverted colors and gets a jagged red or spectral shape behind it",
+      "input_style": "none observed",
+      "card_style": "angled black slabs with white keyline",
+      "navigation_pattern": "vertical list stepped on a diagonal; battle uses a radial fan around the character",
+      "modal_style": "jagged speech-bubble polygons and angled banners",
+      "list_style": "staggered, each line offset and rotated a few degrees differently",
+      "component_notes": "Character portrait always paired with dialogue; counters (money, HP/SP) are set as large italic numerals in the corners"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["rebellious", "theatrical", "kinetic", "stylish", "confident"],
+      "visual_metaphor": "ransom note and calling card cut from magazines",
+      "era_influence": "punk zine collage and 1960s jazz record sleeves, rendered with modern anime art",
+      "genre": "stylized JRPG interface, neo-pop collage",
+      "personality_traits": ["cocky", "playful", "precise"],
+      "adjectives": ["loud", "sharp", "angular", "high-contrast"]
+    },
+    "visual_language": {
+      "complexity": "rich",
+      "ornamentation": "decorative, but every ornament carries a selection or state",
+      "whitespace_usage": "black space as tension, never empty",
+      "visual_weight_distribution": "menu heavy on one side, character art heavy on the other, diagonal between them",
+      "focal_strategy": "single hero element per screen (the selected item or the interrupt word)",
+      "contrast_level": "maximum",
+      "texture_usage": "halftone dots, radiating star bursts, tinted posterized 3D scenery"
+    },
+    "composition": {
+      "hierarchy_method": "scale contrast",
+      "balance_type": "asymmetric",
+      "flow_direction": "diagonal, top-left to bottom-right or radial from the character",
+      "grouping_strategy": "overlap",
+      "negative_space_role": "black field that makes white and red shout"
+    },
+    "imagery": {
+      "photo_treatment": "background 3D scene tinted to a single red or posterized to black and white",
+      "illustration_style": "anime character art in black, white and red only",
+      "graphic_elements": ["stars", "radiating bursts", "jagged slabs", "speech bubbles", "halftone"],
+      "pattern_usage": "halftone and radial bursts behind selections",
+      "image_shape": "cut-out silhouettes, never boxed"
+    },
+    "interaction_feel": {
+      "feedback_style": "every input answers with a slam, sound and color flip",
+      "hover_behavior": "selected item jumps in scale and inverts",
+      "transition_personality": "snappy",
+      "loading_style": "animated character silhouette running across the screen",
+      "microinteraction_density": "high"
+    },
+    "brand_voice_in_ui": {
+      "tone": "cocky and theatrical",
+      "formality": "casual",
+      "cta_style": "direct imperative",
+      "empty_state_approach": "not observed",
+      "error_tone": "not observed"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "heavy-immersive",
+      "performance_tier": "medium",
+      "fallback_strategy": "static snapshot of each composition",
+      "primary_technology": "game engine 2D layers; reproducible as layered 2D drawing"
+    },
+    "background_effects": {
+      "type": "tinted scene and radial bursts",
+      "description": "The 3D world behind menus is tinted to one red or posterized; radiating red spikes burst behind the active command wheel",
+      "technology": "color grade plus vector shapes",
+      "params": { "color_palette": ["#8A0C06", "#F12525", "#040303"], "speed": "instant on open", "density": "low", "opacity": "1", "blend_mode": "multiply for tint" }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not observed in stills",
+      "technology": "none",
+      "params": { "count": "0", "shape": "none", "size_range": "none", "movement_pattern": "none", "color_behavior": "none", "interaction": "none", "spawn_area": "none" }
+    },
+    "3d_elements": {
+      "enabled": true,
+      "type": "scene-bg",
+      "description": "3D characters and environments sit behind a flat 2D UI layer",
+      "technology": "game engine",
+      "params": { "renderer": "real-time 3D", "lighting": "scene lighting, then color-graded", "camera": "fixed", "materials": "toon", "geometry": "characters and rooms", "post_processing": ["single-hue tint", "posterize"], "interaction_model": "none in menus" }
+    },
+    "shader_effects": {
+      "enabled": true,
+      "type": "color-shift",
+      "description": "Full-screen tint and posterize when menus open",
+      "technology": "post-process",
+      "params": { "uniforms": "tint color, threshold", "vertex_manipulation": "none", "fragment_output": "duotone", "noise_type": "none", "distortion": "none" }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "0", "depth_range": "none", "speed_curve": "none" },
+      "scroll_triggered_animations": { "enabled": false, "trigger_points": "none", "animation_type": "none", "scrub_behavior": "none" },
+      "scroll_morphing": { "enabled": false, "description": "Not applicable to a TV game UI" }
+    },
+    "text_effects": {
+      "type": "split-letter-animate",
+      "description": "Each letter is its own cut-out with its own face and angle; words slam in as one unit with overshoot",
+      "technology": "pre-rendered lettering",
+      "params": { "split_strategy": "by-char for styling, by-word for motion", "animation_per_unit": "scale and rotate slam", "stagger": "30-60ms between menu items", "effect_style": "ransom-note collage" }
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "Controller UI; the selection shape is the cursor",
+      "params": { "shape": "none", "size": "none", "blend_mode": "none", "trail": "none", "interaction_zone": "none" }
+    },
+    "image_effects": {
+      "type": "reveal-clip",
+      "description": "Character art and panels enter through angled clip shapes",
+      "technology": "2D masks",
+      "params": { "filter_pipeline": "tint, posterize", "hover_transform": "none", "reveal_animation": "angled wipe", "distortion_type": "none" }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false,
+      "style": "none",
+      "params": { "blur_radius": "0", "transparency": "0", "border_treatment": "none", "shadow_type": "none", "light_source_angle": "none" }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "Not applicable",
+      "technology": "none",
+      "params": { "draw_method": "none", "animation_loop": "none", "color_scheme": "none", "responsiveness": "none", "interaction": "none" }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "morph-shapes",
+      "description": "Jagged selection slabs and bursts redraw instantly as the selection moves",
+      "params": { "animation_method": "instant redraw with overshoot", "path_morphing": "between slab shapes", "stroke_animation": "none", "filter_effects": "none" }
+    },
+    "composite_notes": "Extracted from stills only, so motion values are estimates. The signature elements (red-black-white palette, ransom-note lettering, star and skull motifs, calling-card graphics, character art) belong to Persona 5 and are not to be reused; persona5-transfer.md lists what EMO RUSH takes instead."
+  }
+}
