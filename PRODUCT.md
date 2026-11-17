@@ -30,7 +30,7 @@ The session is graded as a parody of SIX, ITB's academic information system: eac
 
 - Booth hardware: a landscape monitor or TV, mouse, keyboard, and a USB or built-in webcam (720p minimum, 1080p recommended).
 - Session flow: start menu (start, calibrate camera, exit) → 5 s get-ready → for each of 7 expressions: 3 s countdown, 5 s capture, 3 s result → transcript → choose 6 of 7 photos → review strip and GIF → type an email → done.
-- The email is only used as the local folder name `hasil_photo/<email>/`. Nothing is emailed or uploaded.
+- The email names the local folder `hasil_photo/<email>/`. The organisers email each player their strip and GIF after the event; the game itself sends nothing.
 - Fullscreen by default; F toggles fullscreen, Q exits.
 
 ## Capabilities and Constraints

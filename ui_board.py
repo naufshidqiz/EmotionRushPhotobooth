@@ -901,7 +901,7 @@ def _email_form(text, caret, error):
         draw.text((36, 142), "nama@email.com", font=font, fill=(150, 150, 150), anchor="ls")
     draw.line([36, 160, w - 36, 160], fill=PINK if error else INK, width=3)
     font_small = archivo(24, 700, 85)
-    for i, line in enumerate(_wrap("Email cuma dipakai buat nama folder hasil foto di PC ini.", font_small, w - 72)):
+    for i, line in enumerate(_wrap("Strip foto dan GIF kamu bakal dikirim ke email ini di akhir acara.", font_small, w - 72)):
         draw.text((36, 214 + i * 32), line, font=font_small, fill=INK, anchor="ls")
     return place(img, 0, 236, PHOTO, center_x=W // 2)
 

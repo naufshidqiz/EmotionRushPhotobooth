@@ -1,6 +1,6 @@
 # Emotion Rush Photobooth
 
-A Windows webcam game that detects facial expressions, grades seven expression "courses" like an ITB transcript, and creates a photo strip plus an animated GIF. Players choose six photos for the supplied strip template. The game does not send email; approved results are saved locally in a folder named for the email entered by the player.
+A Windows webcam game that detects facial expressions, grades seven expression "courses" like an ITB transcript, and creates a photo strip plus an animated GIF. Players choose six photos for the supplied strip template. Approved results are saved locally in a folder named for the email entered by the player; the organisers send each player their strip and GIF by email after the event. The game itself sends nothing.
 
 The screens are styled as a himpunan notice board (paper strips, pins, tape and stamps on ITB Insight blue) and drawn by `ui_board.py` with the bundled Archivo and Roboto fonts.
 
@@ -70,7 +70,7 @@ The game opens fullscreen. Press **F** to switch between fullscreen and a normal
 1. Click **GAS MAIN** (or press Enter). Use **CEK KAMERA** first if you want to check the camera, lighting, face boxes, or detected face count.
 2. Complete the seven expression courses. Each one is graded on the ITB scale (A, AB, B, BC, C, D, E), and the session ends with a SIX-style transcript and NR.
 3. Click six photos for the strip, review the strip and GIF, and click **SIMPAN** (Y) or **GANTI FOTO** (N).
-4. Enter an email address to name the local result folder. The program does not send an email.
+4. Enter an email address. The results are saved in a folder with that name, and the organisers email them to the player after the event (the program does not send email itself).
 5. On the last screen, click **MAIN LAGI** (R) for another round or **KE MENU** (Q).
 
 The strip and GIF are saved under:
