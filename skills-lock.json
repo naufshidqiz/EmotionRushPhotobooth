@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "skills": {
+    "design-dna": {
+      "source": "zanwei/design-dna",
+      "commit": "593e39bc9e3652734653bd75544a333d7d43615e",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "8a4b3f7999fed6d1ef1f713f5efb1dbda197df093acbb52e6403afca201fbde9",
+      "installMode": "copy"
+    },
+    "game-ui-design": {
+      "source": "omer-metin/skills-for-antigravity",
+      "commit": "e8dcf4e8737921a10088bd5c9eb65e81f74c051f",
+      "sourceType": "github",
+      "skillPath": "skills/game-ui-design/SKILL.md",
+      "computedHash": "6c2293a16bd99d821145d438665215970fa6c6fd75f578b4990f8237e0f497bb",
+      "installMode": "copy"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "commit": "d41d9860b0094dcb68030657da63461212835aaa",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "077889e9782761360c17acbc2522af320d0dd0f928b09cd90884fa304f443a34",
+      "installMode": "copy"
+    }
+  }
+}

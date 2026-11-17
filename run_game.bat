@@ -39,7 +39,7 @@ if not defined RUNNER (
     exit /b 1
 )
 
-echo Starting EMO RUSH!!!
+echo Starting Emotion Rush
 %RUNNER% "%~dp0DRAFT0_EC.py"
 if errorlevel 1 (
     echo.

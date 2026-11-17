@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap");
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1600px; height: 900px; overflow: hidden; }
+body {
+  position: relative;
+  font-family: Archivo, sans-serif;
+  color: #111;
+  background-color: #1B23C9;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(90deg, rgba(0,0,40,.05) 0 2px, transparent 2px 5px);
+}
+.abs { position: absolute; }
+.ghost { position: absolute; background: rgba(255,255,255,.07); }
+.staple { position: absolute; width: 16px; height: 3px; background: rgba(255,255,255,.22); }
+.paper { position: absolute; background: #fff; box-shadow: 0 6px 14px rgba(5,8,60,.38); }
+.ink { background: #111; color: #fff; }
+.strip { position: absolute; background: #fff; font-weight: 900; font-stretch: 62%; line-height: .92; padding: 2px 22px 8px; box-shadow: 0 6px 14px rgba(5,8,60,.38); }
+.label { position: absolute; font-weight: 900; font-stretch: 80%; line-height: 1; padding: 6px 22px 10px; box-shadow: 0 6px 14px rgba(5,8,60,.38); }
+.strip.ink, .label.ink { background: #111; color: #fff; }
+.yel { background: #FFE14A; } .pnk { background: #FF3D8B; } .org { background: #FF8A00; } .grn { background: #34C759; }
+.tape { position: absolute; width: 150px; height: 42px; background: rgba(240,228,192,.86); }
+.pin { position: absolute; width: 26px; height: 26px; border-radius: 50%; background: #FF3D8B; box-shadow: 0 3px 0 #9e1d55, 0 6px 8px rgba(0,0,0,.3); }
+.pin.off { background: #0f1580; box-shadow: inset 0 0 0 3px #3a42e0; }
+.pin.done { background: #FFE14A; box-shadow: 0 3px 0 #a88f12, 0 6px 8px rgba(0,0,0,.3); }
+.cam { position: absolute; background: #fff; padding: 16px 16px 56px; box-shadow: 0 10px 24px rgba(5,8,60,.45); }
+.cam .feed { width: 100%; height: 100%; background: #2E3138; color: #8d93a0; font-size: 16px; display: flex; align-items: flex-end; padding: 12px; }
+.cam .cap { position: absolute; left: 22px; bottom: 14px; font-size: 26px; font-weight: 800; font-stretch: 75%; }
+.stamp { position: absolute; border: 8px solid #FF3D8B; color: #FF3D8B; font-weight: 900; font-stretch: 70%; line-height: 1; padding: 6px 22px; opacity: .92; }
+.note { position: absolute; padding: 18px 20px; font-weight: 700; font-stretch: 85%; box-shadow: 0 6px 14px rgba(5,8,60,.38); }
+.small { font-size: 26px; line-height: 1.25; }
+.num { font-variant-numeric: tabular-nums; }
+/* Cohesion rules: only three angles on any screen, and every piece touches a neighbour.
+   -6deg = strips and labels (the main diagonal), -3deg = photos and headers, +4deg = papers and notes (the counter beat). */
+.a6 { transform: rotate(-6deg); } .a3 { transform: rotate(-3deg); } .c4 { transform: rotate(4deg); }
