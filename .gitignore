@@ -12,6 +12,12 @@ hasil_foto/
 mau_print/
 tidak_print/
 
+# Generated screen renders (tools/render_screens.py)
+design/renders/
+
+# Installed skill dependencies (reinstall with npm install in the skill's scripts folder)
+.claude/skills/*/scripts/node_modules/
+
 # Local editor / operating system files
 .vscode/
 .idea/
